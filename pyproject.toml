@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "bsc-genesis-contract"
+name = "bnw-genesis-contract"
 authors = ["BNB Chain"]
 license = "Apache2.0"
 readme = "README.md"
