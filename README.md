@@ -5,11 +5,13 @@ This repo hold all the genesis contracts on BNB Smart chain. More details in [do
 ## Prepare
 
 Install node.js dependency:
+
 ```shell script
 npm install
 ```
 
 Install foundry:
+
 ```shell script
 curl -L https://foundry.paradigm.xyz | bash
 foundryup
@@ -17,12 +19,14 @@ forge install --no-git --no-commit foundry-rs/forge-std@v1.7.3
 ```
 
 Install poetry:
+
 ```shell script
 curl -sSL https://install.python-poetry.org | python3 -
 poetry install
 ```
 
 Tips: You can manage multi version of Node:
+
 ```Shell
 ## Install nvm and node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
@@ -40,6 +44,7 @@ RPC_BSC=${archive_node}
 You can get a free archive node endpoint from https://nodereal.io/.
 
 Run forge test:
+
 ```shell script
 forge test
 ```
@@ -61,9 +66,10 @@ All system contracts will be flattened and output into `${workspace}/contracts/f
 
 ## How to generate mainnet/testnet/dev genesis file
 
-```shell 
+```shell
 poetry run python -m scripts.generate ${network}
 ```
+
 Check the `genesis.json` file, and you can get the exact compiled bytecode for different network.
 (`poetry run python -m scripts.generate --help ` for more details)
 
@@ -80,13 +86,14 @@ cast interface ${workspace}/out/{contract_name}.sol/${contract_name}.json -p ^0.
 ```
 
 ## BEP-171 unlock bot
+
 ```shell script
 npm install ts-node -g
 
 cp .env.example .env
 # set UNLOCK_RECEIVER, OPERATOR_PRIVATE_KEY to .env
 
-ts-node scripts/bep171-unlock-bot.ts 
+ts-node scripts/bep171-unlock-bot.ts
 ```
 
 ## License
